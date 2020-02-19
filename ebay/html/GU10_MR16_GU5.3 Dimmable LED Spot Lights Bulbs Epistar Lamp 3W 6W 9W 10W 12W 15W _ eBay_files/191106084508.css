@@ -1,0 +1,83 @@
+/* Copyright (c) PushAuction LLC, All Rights Reserved. Used with permission by PushAuction. Original design work, including graphics and all related scripts.*/ 
+/* Template Css Create time:2/9/2020 5:01:19 PM */ 
+/* Template Service End Data: 7/16/2016 11:11:00 AM */ 
+/* Template Version: V4.0 */ 
+/* Template Name:A15049 */ 
+/* style */ 
+@import url('/lt_setting.css?20180901');
+/* template setting */ 
+
+.patemplate_content{padding:0;}
+.patemplate_contentin{padding:0;  padding-top:13px;}
+#terms input { display: none;}
+#terms label.headlabel1, #terms label.headlabel2, #terms label.headlabel3, #terms label.headlabel4, #terms label.headlabel5 { display: none; }
+#terms #patemplate_termscontent_1, 
+#terms #patemplate_termscontent_2, 
+#terms #patemplate_termscontent_3, 
+#terms #patemplate_termscontent_4{display: block; margin-bottom:10px;} 
+#terms #patemplate_termscontent_5{display: block; }
+#terms #tab1:checked ~ #patemplate_termscontent_1 .template_terms_contentin, 
+#terms #tab2:checked ~ #patemplate_termscontent_2 .template_terms_contentin, 
+#terms #tab3:checked ~ #patemplate_termscontent_3 .template_terms_contentin, 
+#terms #tab4:checked ~ #patemplate_termscontent_4 .template_terms_contentin, 
+#terms #tab5:checked ~ #patemplate_termscontent_5 .template_terms_contentin {display: block;}
+#terms .template_terms_contentin_t{display: block; width: 100%;float:left; position:relative;color:#ac7743;font-size:13;height:44px;line-height:44px!important;background-color:transparent;background-image:url(https://timage.pushauction.com/v3/DefaultTemplate/A15049/tabbg.jpg);background-repeat:repeat-xbackground-position:top left;   }
+#terms label {display: inline-block; width:100%; float:left;font-weight: 600; text-align:left;}
+#terms  label span{margin-left:10px;font-weight: 600;}
+@media(min-width:480px) and (max-width:797px) { #terms .template_terms_contentin_t{display:block}}
+@media(min-width:797px) and (max-width:1100px){ #terms .template_terms_contentin_t{display:block}}
+@media(min-width:1100px){ #terms .template_terms_contentin_t{display:block}}
+#patemplate_header_nav{display:none!important}.patemplate_slider{display:none!important}#patemplate_store_category{display:none!important}#patemplate_userlinks{display:none!important}.patemplate_center{width:1200px}
+@media(min-width:1100px){.patemplate_header_logo{margin-top:84px;}}#patemplate{background-color:transparent;background-image:url(https://timage.pushauction.com/v3/DefaultTemplate/A15049/bg.jpg);background-position-y:top;background-position-x:center;background-repeat:repeat-y; }
+.pastore_top_background{background-image:url(https://timage.pushauction.com/v3/DefaultTemplate/A15049/store_topbg.jpg);background-position-y:top;background-position-x:center;background-repeat:no-repeat;}
+.pastore_bottom_background{background-image:url();background-position-y:bottom; background-position-x:center;background-repeat:no-repeat;}
+.pastore_header_background{height:259px;min-height:259px;background-color:transparent;background-image:url(https://timage.pushauction.com/v3/DefaultTemplate/A15049/top_banner.png);background-position-y:top;background-position-x:right;background-repeat:no-repeat;}
+.patemplate_header_logo{background-image:url(https://timage.pushauction.com/v3/DefaultTemplate/A15049/logo.png);}
+.pastore_footer_background{height:200px;background-color:transparent;background-image:url(https://timage.pushauction.com/v3/DefaultTemplate/A15049/bottom_banner.png);background-position-y:top;background-position-x:center;background-repeat:no-repeat;  }
+.patemplate_content{  }
+.patemplate_header_nav{  }
+.patemplate_header_nav ul.lev1 ul.lev2 li a{}.patemplate_content_left .patemplatebox_h{background-color:transparent;background-image:url(https://timage.pushauction.com/v3/DefaultTemplate/A15049/category_bg.jpg);background-repeat:no-repeat;}
+.patemplate_content_left .patemplatebox_h{  height:44px;line-height:44px;}
+.patemplate_content_left .patemplatebox_h .patemplatebox_title{color:#ac7743;font-size:13px;height:44px;line-height:44px;}
+.patemplate_content_left .patemplatebox_bodyin{ background-color:#ffffff; background-repeat:repeat; background-position:top left; }
+.patemplate_content_left .patemplatebox_bodyin{border:1px solid #ffffff;  border-top:none;}
+.patemplate_content_left .patemplatebox_bodynone{ background-color:#ffffff; background-repeat:repeat; background-position:top left; }
+.patemplate_content_left .patemplatebox_bodynone{border:1px solid #ffffff;  border-top:none;}
+.patemplate_content_left .patemplate_category ul li a{color:#ac7743;}
+.patemplate_content_left .storenewsletter{background-color:#eee7d9; }
+.patemplate_content_left .storenewsletter_txt{color:#ac7743;font-size:15px;}
+.patemplate_content_left .storenewsletter_txt:after{content:"Add my Store to your Favourites and receive my email newsletters about new items and special promotions!"}
+.patemplate_content_left .savesellery_button{background-color:#ac7743;color:#ffffff;font-size:15; }
+.patemplate_content_right .patemplatebox_h1{background-color:transparent;background-image:url(https://timage.pushauction.com/v3/DefaultTemplate/A15049/itemgallery_bg.jpg);background-repeat:repeat;background-position:top left;}
+.patemplate_content_right .patemplatebox_h1{  height:44px;line-height:44px!important;}
+.patemplate_content_right .patemplatebox_h1 .patemplatebox_title{color:#ac7743;font-size:13px;height:44px;line-height:44px!important;} 
+.patemplate_content_right .template_terms_contentin{border:1px solid  #ffffff;background-color:#ffffff;   border-top:none;}
+.patemplate_content_right .patemplatebox_bodyin{ background-color:#ffffff; background-repeat:repeat;   background-position:top left;}
+.patemplate_content_right .patemplatebox_bodyin{border:1px solid  #ffffff;  border-top:none;}
+.patemplate_content_right .patemplatebox_bodynone{background-color:#ffffff; background-repeat:repeat;   background-position:top left; }
+.patemplate_content_right .patemplatebox_bodynone{border:1px solid  #ffffff;  border-top:none;}
+.patemplate_content_right .patemplate_picbodyin{border:1px solid  #ffffff; }
+.patemplate_header_nav{ width:900px;background-color:transparent; background-repeat:repeat;background-position:top left;height:51px;line-height:51px;}
+.patemplate_header_nav > ul > li{ text-align:leftpx;height:51px;line-height:51px;}
+.patemplate_header_nav > ul > li:hover{background-color:#972617!important;}
+.patemplate_header_nav > ul > li > a{color:#685f4d!important;height:51px;line-height:51px;}
+.patemplate_header_nav > ul > li:hover > a{color:#ffffff!important;}
+.patemplate_header_nav > ul > li > ul.lev2{background-color:transparent;top:51px;}
+.patemplate_header_nav > ul > li:hover ul.lev2 li {background-color:transparent;color:#685f4d!important;}
+.patemplate_header_nav > ul > li:hover ul.lev2 li:hover{background-color:#972617!important;}.patemplate_header_nav > ul > li:hover ul.lev2 li a {color:#685f4d!important;}
+.patemplate_header_nav > ul > li:hover ul.lev2 li:hover a{color:#ffffff!important;}.pastore_footer .pastore_inside #menu ul li a  {color:#685f4d;}
+.pastore_footer .pastore_inside #menu ul li a:hover {color:#685f4d;}
+.pastore_footer .pastore_inside #copyright {color:#685f4d;}
+.pastore_footer .pastore_inside #copyright a {color:#685f4d;}
+.pastore_footer .pastore_inside .inside_right a {background-image:url(https://timage.pushauction.com/v3/DefaultTemplate/A15049/logo.png);}
+.pastore_footer .pastore_inside #copyright a:hover {color:#685f4d;}
+@media(min-width:240px) and (max-width:479px){#header{display:block;}}@media(min-width:240px) and (max-width:479px){.pictureslider{display:block!important;}}@media(min-width:240px) and (max-width:479px){#terms{display:block!important;}}@media(min-width:240px) and (max-width:479px){#pa_t_cp{display:none!important}}@media(min-width:240px) and (max-width:479px){#pa_b_cp{display:none!important}}#patemplate_template_category{display:none}
+#patemplate_header_nav{display:none}
+#patemplate_links{display:none}
+#paseo{display:none}
+                            #patemplatebackup{display:black}
+                            .patemplate_content_left{display:none!important;}
+                            #patemplate_store_category{display:none!important;}
+                            .patemplate_header_logo{display:none!important;}
+                            .patemplate_content_right .patemplatebox_h1{background-repeat:repeat-x!important}
+                            .patemplate_content_right{margin-left:0;}
