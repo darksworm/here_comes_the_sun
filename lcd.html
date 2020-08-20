@@ -1,38 +1,35 @@
 <h1>IV - Adding the LCD</h1>
 
 <p>
-  After testing the basic wake-up-light for a week or so, I decided to add an LCD so that I can program the settings. holy shit this is dry fix meeee
+  After testing the basic wake-up-light for a week or so, I decided to add an LCD so that I can program the settings.
 </p>
 
 <p>
-  My first attempt was successful - I hooked the LCD up and everything just worked. Then I made some changes to the code and.. huh, it stopped working and started spewing solid blocks instead of text. I rewired it a few times with no success. After an hour of head-scratching I wrote a minimal script which just initializes the LCD and writes some text... and... it worked. I made sure that the logic is the same in my main script and quickly realized that some other code is causing this issue. I commented out everything but the LCD code and started adding lines back until it stopped working. And, of course, I found what I was dreading - the RTC module initialization was breaking the LCD.
+  My first attempt was successful - I hooked the LCD up and everything just worked. Later I made some changes to the code and.. huh, it stopped working and started spewing solid blocks instead of text. I rewired it a few times with no success. I thought it might be a contrast issue, so I swapped the pot for some resistors and when that didn't work for another pot but nothing changed. These are the bricks of pain.
+</p>
+<img width='600px' src='4_lcd/lcd_bricks_cropped.jpg'>
+<p>
+  After an hour of head-scratching I wrote a minimal script which just initializes the LCD and writes some text... and... it worked. I made sure that the logic is the same in my main script and quickly realized that something other in my code is causing this issue. I commented out everything but the LCD code and started adding lines back until it broke again. And, of course, I found what I was dreading - the RTC module initialization was breaking the LCD.
 </p>
 
 <h3>not. like. this.</h3>
 
 <p>
-  I tried different RTC libraries, none of them worked at all. Then I looked at the code of the original library and failed to find anything relevant that could cause this (my guess at this point was that the RTC library used the same pins as the LCD for some reason). I was stumped, but there was one more thing - maybe it's an issue with the pins. To validate I moved all the LCD pins to the other side of the arduino to the analog input pins (yes, they can be used as outputs) and there was no change... But after validating the connections like 3 times it started working - I don't know why, but I'm not touching it.
+  I tried different RTC libraries, none of them worked at all. Then I looked at the code of the original library and failed to find anything relevant that could cause this (my guess at this point was that the RTC library used the same pins as the LCD for some reason). I was stumped, but there was one more thing - maybe it's an issue with the specific arduino outputs. To validate I moved all of the LCD pins to the other side of the arduino to the analog input pins (yes, they can be used as outputs) and there was no change... But after checking the connections at least 3 times it just started working - I don't know why, but I'm not touching it anymore!
 </p>
 
-<img width='600px' src='4_lcd/green_lcd_hello_world.jpg'>
+<img width="600px" src="4_lcd/green_lcd_hello_world.jpg">
 
 <p>
   Finally. The LCD <b>and</b> the RTC module both working together. About now, my order of arduinos finally arrived, but I wasn't keen on moving all the wires over just to see it not work, so instead I moved all of the connections to a shield. And doing that also got zapped with 220V (because who needs insulation right?) so I also wrapped the relay in electrical tape (trust me, I'm an engineer <sub>of software</sub>).
 </p>
 
-<img width='600px' src='4_lcd/hooked_up_shield_cropped.jpg'>
-
-<p>End this part here? or go on? do some grooming and decide later. could show another pic of the added buttons and then move on to next part - programming the UI.</p>
+<img width="600px" src="4_lcd/hooked_up_shield_cropped.jpg">
 
 <p>
-  Now I'm ready to think about the UI. To figure out what I need, I decided to write user stories. I came up with these:
-  <ul>
-    <li>I want to see the time</li>
-    <li>I want to be able to change the start/mid/end times of the schedule</li>
-    <li>When I change the start time, I want the other times to shift as well</li>
-  </ul>
+  Now that all that is done and dealt with (hopefully forever), I'm ready to move on to actually make the LCD pull some weight.
 </p>
 
-
-<!-- <a href='lcd.html'>Next part: Adding the LCD</p> -->
-<a href='making_it_useful.html'>Previous part: Making it useful</p>
+<a href='ui.html'>Next part: The UI</p> 
+<a href="making_it_useful.html">Previous part: Making it useful<p></p>
+</a>
