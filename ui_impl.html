@@ -13,13 +13,6 @@
   declaration.
 </p>
 
-<h2>Saving the state</h2>
-<p>
-  You can store up to 1024 bytes of data in the (arduino uno) EEPROM. Storing single bytes is straight-forward, <strike>but if you need to save multi-byte varaibles, you'd have to implement chunking logic</strike> hindsight - there are libraries that do this for you, check out <a href='https://playground.arduino.cc/Code/EEPROMex/' target='_blank'>EEPROMex</a>, hindsight 2 - I just found that <a href='https://www.arduino.cc/en/Reference/EEPROMPut' target='_blank'>EEPROM.put</a> exists and it will hapilly write primitite multi-byte types to the EEPROM. </p>
-<p>
-  I instead decided to boil down the variables I'm using in my state to something that would fit into a byte. I'm using two types: boolean and time. Boooleans fit into a byte, so that's already half of my work done. You can represent the current time in the range of 0 to 1440 minutes. 1440 doesn't fit into a byte, but 144 does (into an unsigned byte). Storing 0-144 as a representation of time means that the smallest interval we can store is 10 minutes, which is granular enough for my needs here.
-</p>
-
 <h2>Variable selection</h2>
 <p>
   For the variable selection menu, I decided on this variable order:
@@ -61,6 +54,13 @@
 </video>
 
 <p>Last but not least - while holding the green button in standby mode, the current clock and alarm time are displayed on screen.</p>
+
+<h2>Saving the state</h2>
+<p>
+  You can store up to 1024 bytes of data in the (arduino uno) EEPROM. Storing single bytes is straight-forward, <strike>but if you need to save multi-byte varaibles, you'd have to implement chunking logic</strike> hindsight - there are libraries that do this for you, check out <a href='https://playground.arduino.cc/Code/EEPROMex/' target='_blank'>EEPROMex</a>, hindsight 2 - I just found that <a href='https://www.arduino.cc/en/Reference/EEPROMPut' target='_blank'>EEPROM.put</a> exists and it will hapilly write primitite multi-byte types to the EEPROM. </p>
+<p>
+  I instead decided to boil down the variables I'm using in my state to something that would fit into a byte. I'm using two types: boolean and time. Boooleans fit into a byte, so that's already half of my work done. You can represent the current time in the range of 0 to 1440 minutes. 1440 doesn't fit into a byte, but 144 does (into an unsigned byte). Storing 0-144 as a representation of time means that the smallest interval we can store is 10 minutes, which is granular enough for my needs here.
+</p>
 
 <!--<a href='ui.html'>Next part: Implementing the UI</a>
 <br/>
