@@ -1,0 +1,69 @@
+<h1>VI - Implementing the UI</h1>
+
+<p>
+  This state machine relies on two enums - 
+  <a href='https://github.com/darksworm/wake-up-light/blob/68f60d1a1ccc3263b059660acd8602c68a4925be/definitions.h#L31' target="_blank"><i>ClockState</i></a>,
+  <a href='https://github.com/darksworm/wake-up-light/blob/68f60d1a1ccc3263b059660acd8602c68a4925be/definitions.h#L40' target='_blank'><i>ClockVariable</i></a> 
+  and an array of 
+  <a href='https://github.com/darksworm/wake-up-light/blob/68f60d1a1ccc3263b059660acd8602c68a4925be/definitions.h#L105' target='_blank'><i>MenuItem</i></a> 
+  structs. Long story short - every loop we check what state we're in and display the appropriate content and execute the appropriate logic which is implemented in the 
+  <a href='https://github.com/darksworm/wake-up-light/blob/68f60d1a1ccc3263b059660acd8602c68a4925be/wul.ino#L226' target='_blank'><i>button loop</i></a> 
+  and 
+  <a href='https://github.com/darksworm/wake-up-light/blob/68f60d1a1ccc3263b059660acd8602c68a4925be/wul.ino#L29' target='_blank'><i>MenuItem array</i></a> 
+  declaration.
+</p>
+
+<h2>Variable selection</h2>
+<p>
+  For the variable selection menu, I decided on this variable order:
+  <ol>
+    <li>Disable clock</li>
+    <li>Start time</li>
+    <li>Ramp-up time</li>
+    <li>End time</li>
+  </ol>
+</p>
+
+<video vidth='480px' height='270px' controls>
+  <source src='assets/lcd-first-menu.mp4' type='video/mp4'>
+</video>
+
+<p>Entering the variable selection state and then going through all the variables in the menu. When you reach the last variable, but keep going, you're returned to the first one and vice-versa. The variable name is displayed in the first line and its current value in the second.</p>
+
+<h2>Changing variables</h2>
+
+<p>
+  While in the variable selection state, if you press the white button, you go into the Changing variable state. The value will start flashing and now you can adjust it with the red and blue buttons. If you go past a set maximum, it will loop the value around to the minimum. You can save the variable by pressing the white button again or cancel by pressing the green button.
+</p>
+
+<video vidth='480px' height='270px' controls>
+  <source src='assets/lcd-ramp-up-setting.mp4' type='video/mp4'>
+</video>
+<p>
+  The ramp-up setting is bound to a maximum of 3 hours and the minimum of zero, but it's displayed as <i>instant</i> here, because displaying 0 mins seems wrong.
+</p>
+
+<video vidth='480px' height='270px' controls>
+  <source src='assets/lcd-end-time-validation.mp4' type='video/mp4'>
+</video>
+
+<p>The validations in action.</p>
+
+<video vidth='480px' height='270px' controls loop>
+  <source src='assets/lcd-green-btn.mp4' type='video/mp4'>
+</video>
+
+<p>Last but not least - while holding the green button in standby mode, the current clock and alarm time are displayed on screen.</p>
+
+<h2>Saving the state</h2>
+<p>
+  You can store up to 1024 bytes of data in the (arduino uno) EEPROM. Storing single bytes is straight-forward, <strike>but if you need to save multi-byte varaibles, you'd have to implement chunking logic</strike> hindsight - there are libraries that do this for you, check out <a href='https://playground.arduino.cc/Code/EEPROMex/' target='_blank'>EEPROMex</a>, hindsight 2 - I just found that <a href='https://www.arduino.cc/en/Reference/EEPROMPut' target='_blank'>EEPROM.put</a> exists and it will hapilly write primitite multi-byte types to the EEPROM. </p>
+<p>
+  I instead decided to boil down the variables I'm using in my state to something that would fit into a byte. I'm using two types: boolean and time. Boooleans fit into a byte, so that's already half of my work done. You can represent the current time in the range of 0 to 1440 minutes. 1440 doesn't fit into a byte, but 144 does (into an unsigned byte). Storing 0-144 as a representation of time means that the smallest interval we can store is 10 minutes, which is granular enough for my needs here.
+</p>
+
+<!--<a href='ui.html'>Next part: Implementing the UI</a>
+<br/>
+<br/>-->
+<a href="ui.html">Previous part: Engineering the UI</a>
+

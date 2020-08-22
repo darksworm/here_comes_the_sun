@@ -1,0 +1,52 @@
+<h1>III - Making it useful</h1>
+
+<p>
+  Now that the clock, relay and MOSFET are working, I'm ready to invest my time to make it actually useful. The first order of business is to hook up all of the LEDs, the proper PSU and MOSFETs.
+</p>
+
+<p>
+  I had to add two DC-DC converters to lower the voltage for two of the three LED sets because earlier I found that the LEDs don't dim very well at 12V, but do at 8V. I added only two instead of three because I'm planning to use the third set as either fully off or fully on as the last step of the ramp up.
+</p>
+
+<img width='600px' src='assets/all_leds_hooked_initial_cropped.jpg'>
+
+<p>
+  To make it actually function like an alarm clock I decided on having 3 settings:
+  <ol>
+    <li>Start time - when to start ramping up the brightness</li>
+    <li>Ramp up time - interval; how long to ramp up from 0-100% brigtness</li>
+    <li>End time - when to turn off</li>
+  </ol>
+  The start to end time interval is then split into two equal parts, one where the first low voltage LEDs ramp up to 100% and the other where the second does the same, while the first one is on at 100%. After that the high voltage LEDs turn on until the end time is reached when all of the LEDs are turned off. The ramp up code can be found <a href='https://github.com/darksworm/wake-up-light/blob/68f60d1a1ccc3263b059660acd8602c68a4925be/wul.ino#L415' target="_blank">here</a>.
+</p>
+
+</br>
+<i>
+  > Some time passes...
+</i>
+</hr>
+</br>
+</br>
+
+<p>
+  I tested this setup for a while and it worked, but faced some issues:
+  <ol>
+    <li>The loose LEDs are impossible to orient in the same direction</li>
+    <li>The LEDs focus the light to a very small area, where I want it to be spread out</li>
+  </ol>
+  I did the obvious thing - put them in a cardboard box (no fire hazards here, no sirree!) and also removed all the condenser lenses from the LEDs which helped a lot with spreading the light out.
+</p>
+
+<img width='600px' src='assets/dresser_off_closeup_cropped.jpg'>
+
+<p>
+  Do all prototypes end up looking this glorious? So far, the box seems to be a great &amp; easy solution. At first I had envisioned something more sun-esque, and I'd still like to do something like it, but I'm starting to think that maybe this box could still exist inside of another circular chassis. For now I'm undecided on how to achieve a more sun-esque look - at first I thought I should just plop a scatter lens in front of the LEDs and call it a day, but unfortunately those are impossible to find cheaply.. Maybe I just don't know how to look for them.
+</p>
+
+<img width='600px' src='assets/dresser_breadboard_cropped.jpg'>
+<p>
+  I also added another button at this point (the red one) - a button which turns the lights on/off whenever you need. After that, the project stayed in pretty much this exact state for quite some time (and it worked great!) before I decied that I want to add an LCD and more buttons for changing the settings.
+</p>
+
+<a href='lcd.html'>Next part: Adding the LCD</p>
+<a href='testing.html'>Previous part: Testing</p>

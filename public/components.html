@@ -1,0 +1,67 @@
+<h1>I - Components</h1>
+
+<h2 id="arduino">Arduino uno</h2>
+<img width='460px' height='auto' src="assets/arduino_top_down.jpg">
+
+<p>
+  The brains of the operation. This is not a genuine arduino uno - it's a generic clone (search for atmega328p on eBay) but still does the job wonderfully and cheaply. The only requirements for the development board were that it should support I2C (this one has separate SCL and SDA pins which is great) and have as many pins as possible. At first I was considering arduino mega but decided against it to not get too comfortable with tons of pins.
+</p>
+
+<h2 id="ds3231">DS3231 clock module</h2>
+<img width=320px' height='auto' style='display:inline' src="assets/clock_back_cropped.jpg">
+<img width=320px' height='auto' style='display:inline' src="assets/clock_bat_cropped.jpg">
+<p>
+  This module will be keeping time for us. It uses I2C for communication and is very efficient and accurate. It is also very popular and there are many arduino libraries available for use with this module. It optionally uses a CR2032 battery to keep time when it's unplugged - this is a must for any clock in my book, as power outages do happen from time to time and it is very annoying having to reset the clock.
+</p>
+
+
+<h2>MOSFET modules</h2>
+<img width='320px' height='auto' src='assets/mosfet_topdown_cropped.jpg'>
+<p>
+  These modules will be used for PWM control (dimming) of the LEDs. In hindsight, I could've saved a buck and just bought the MOSFETs themselves and wired them up myself as the modules aren't very complicated. But I have to admit, the plug&amp;play aspect of these modules is nice.
+</p>
+
+<h2>Relay module</h2>
+<img width='460px' height='auto' src='assets/relay_cropped.jpg'>
+<p>
+  This will be used to toggle the mains power for the 12V power supply as I intend to have two separate power sources for higher efficiency while the lights are off. Again going with a ready-made module instead of the separate parts just to remove the headache of manual wiring.
+</p>
+
+<h2>16x2 LCD module</h2>
+<img width='460px' height='auto' src='assets/lcd_cropped.jpg'>
+<p>
+  This LCD will be used for the UI of changing the clocks parameters. These LCDs are very popular in the arduino community &amp; just like the clock module have plently of libraries ready for use.
+</p>
+
+<h2>DC to DC buck converter module</h2>
+<img width='460px' height='auto' src='assets/dc_dc_buck_converter_topdown_cropped.jpg'>
+<p>
+  I didn't initially plan on using these, but I already had a bunch of them and ended up needing them due to my "dimmable" LEDs being not very dimmable at 12V, but instead perform great at 6-8V.
+</p>
+
+<h2>6x 12V 8W dimmable MR16 LEDs</h2>
+<img width='460px' height='auto' src='assets/leds_cropped.jpg'>
+<p>
+  These will be our sun. It took a long time to figure out what would work best and I decided on these because they were compact and inexpensive. I chose bulbs instead of LED modules so that they would be easier to replace. In hindsight, these were probably not the best choice as I discovered:
+  <ul>
+    <li>they dim well only at 6-8V, but very poorly at 12V</li> 
+    <li>one of them even arrived with only 2 out of 4 working LED modules</li>
+    <li>wiring them in series doesn't work as expected (they turn very, very dim)</li>
+  </ul>
+On the bright side, they do dim very well when lowering the voltage... which is not very useful.
+</p>
+
+<h2>MR16 bulb sockets</h2>
+<img width='460px' height='auto' src='assets/adapter_for_led_single.jpg'>
+<p>
+  These will be very useful for swapping out LEDs when they die (I do expect them to, as they are cheap). These sockets are quite fragile - the one in the picture is ruined (you can see that the upper port is obstructed). If you choose to use these, make sure that the pins on your bulbs are tapered (mine weren't, I crushed them with pliers) otherwise you'll end up smushing the contact pads and ruining your sockets (I ruined 2).
+</p>
+
+<h2>12V 60W LED PSU</h2>
+<img width='460px' height='auto' src='assets/12V_PSU_cropped.jpg'>
+<p>
+  This will be driving the LEDs. 60W should be more than plenty for the LEDs I've bought. The main reason for picking this exact one is that it was available quickly. Didn't put much thought into this choice.
+</p>
+
+<a href='testing.html'>Next part: Testing</p>
+<a href='index.html'>Previous part: Preface</p>
