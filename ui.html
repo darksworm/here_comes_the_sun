@@ -1,4 +1,4 @@
-<h1>V - The UI</h1>
+<h1>V - Engineering the UI</h1>
 
 <p>
   Now I'm ready to think about how the UI should work. To figure out what I need, I decided to first write user stories. I came up with these:
@@ -8,10 +8,15 @@
   <li>I want to be able to change the start/mid/end times of the schedule</li>
   <li>I want to be able to disable the alarm</li>
   <li>When I change the start time, I want the other times to shift as well</li>
+  <li>I want to be able to unplug the clock and not lose the settings</li>
 </ol>
 
 <p>
-  For changing the variables, it was clear that I need two views - one where I can choose the variable I want to change, another where I'm changing the variables. To change the variables I would want to either increment or decrement them. Looks like this can be done with 4 buttons.
+  For changing the variables, it was clear two views/states are needed:
+  <ul>
+    <li>Selecting variable to change</li>
+    <li>Changing selected variable</li> 
+  </ul>To change the variables I would want to either increment or decrement them. Looks like this can be done with 4 buttons.
 </p>
 
 <p>
@@ -20,19 +25,14 @@
 
 <img width='600px' src='ui/flow.png'>
 <p>
-  Fairly simple - two looping menu states with linear navigation and a temporary "displaying time" state.
+  This is not a standard UL diagram (I've long forgotten how to do them), but instead a combination of multiple different diagrams. The rounded corner blocks are states, sharp corner blocks are actions and lines either automatic transitions or button state induced transitions. Fairly simple - two looping menu states with linear navigation and a temporary "displaying time" state.
 </p>
 
 <p>
-  For the variable selection menu, I decided on this variable order:
-  <ol>
-    <li>Disable clock</li>
-    <li>Start time</li>
-    <li>Ramp-up time</li>
-    <li>End time</li>
-  </ol>
-  I decided to leave the increment/decrement action logic for later.
+  I felt (mostly) comfortable about all of the actions I need to implement based on this diagram except for the "Save value" part - I didn't know how to even approach it, but after a quick search engine session, I found that the arduinos have an on-board <a href='https://en.wikipedia.org/wiki/EEPROM' target='_blank'>EEPROM</a> and that it's not too difficult to use.
 </p>
 
-<p></p>
-
+<a href='ui_impl.html'>Next part: Implementing the UI</a>
+<br/>
+<br/>
+<a href="making_it_useful.html">Previous part: Adding the LCD</a>
