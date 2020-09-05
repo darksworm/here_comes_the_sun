@@ -15,7 +15,7 @@
 <h3>not. like. this.</h3>
 
 <p>
-  I tried different RTC libraries, none of them worked at all. Then I looked at the code of the original library and failed to find anything relevant that could cause this (my guess at this point was that the RTC library used the same pins as the LCD for some reason). I was stumped, but there was one more thing - maybe it's an issue with the specific arduino outputs. To validate I moved all of the LCD pins to the other side of the arduino to the analog input pins (yes, they can be used as outputs) and there was no change... But after checking the connections at least 3 times it just started working - I don't know why, but I'm not touching it anymore!
+  I tried different RTC libraries, none of them worked at all. Then I looked at the code of the original library and failed to find anything relevant that could cause this (my guess at this point was that the RTC library used the same pins as the LCD for some reason). I was stumped, but there was one more thing - maybe it's an issue with the specific arduino outputs. To validate I moved all of the LCD pins to the other side of the arduino to the analog input pins (yes, they can be used as outputs) and there was no change... But after checking the connections at least 3 times it just started working - I don't know why, but I'm not touching it anymore!</br><i>edit: I later found out that two of the pins I was using for the LCD were also being used in i2c comms on the arduino uno.</i>
 </p>
 
 <img width="600px" src="assets/green_lcd_hello_world.jpg">
