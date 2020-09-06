@@ -62,8 +62,8 @@
   I instead decided to boil down the variables I'm using in my state to something that would fit into a byte. I'm using two types: boolean and time. Boooleans fit into a byte, so that's already half of my work done. You can represent the current time in the range of 0 to 1440 minutes. 1440 doesn't fit into a byte, but 144 does (into an unsigned byte). Storing 0-144 as a representation of time means that the smallest interval we can store is 10 minutes, which is granular enough for my needs here.
 </p>
 
-<!--<a href='ui.html'>Next part: Implementing the UI</a>
+<a href='lcd_issues.html'>Next part: LCD noise issues</a>
 <br/>
-<br/>-->
+<br/>
 <a href="ui.html">Previous part: Engineering the UI</a>
 
