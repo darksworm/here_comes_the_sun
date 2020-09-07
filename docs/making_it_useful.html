@@ -14,10 +14,10 @@
   To make it actually function like an alarm clock I decided on having 3 settings:
   <ol>
     <li>Start time - when to start ramping up the brightness</li>
-    <li>Ramp up time - interval; how long to ramp up from 0-100% brigtness</li>
-    <li>End time - when to turn off</li>
+    <li>Ramp up time - interval; how long to ramp up from 0-100% brightness</li>
+    <li>End time - when to turn off the lights</li>
   </ol>
-  The start to end time interval is then split into two equal parts, one where the first low voltage LEDs ramp up to 100% and the other where the second does the same, while the first one is on at 100%. After that the high voltage LEDs turn on until the end time is reached when all of the LEDs are turned off. The ramp up code can be found <a href='https://github.com/darksworm/wake-up-light/blob/68f60d1a1ccc3263b059660acd8602c68a4925be/wul.ino#L415' target="_blank">here</a>.
+  The start to end time interval is then split into two equal parts, one where the first set of low voltage LEDs ramp up to 100% and the other where the second set does the same, while the first one is on at 100%. After that the set of high voltage LEDs turn on until the end time is reached when all of the LEDs are turned off. The ramp up code can be found <a href='https://github.com/darksworm/wake-up-light/blob/68f60d1a1ccc3263b059660acd8602c68a4925be/wul.ino#L415' target="_blank">here</a>.
 </p>
 
 </br>
@@ -29,10 +29,10 @@
 </br>
 
 <p>
-  I tested this setup for a while and it worked, but faced some issues:
+  I tested this setup for a while and it worked, but had some issues:
   <ol>
     <li>The loose LEDs are impossible to orient in the same direction</li>
-    <li>The LEDs focus the light to a very small area, where I want it to be spread out</li>
+    <li>The LEDs focus the light to a very small area, and I want it to be spread out</li>
   </ol>
   I did the obvious thing - put them in a cardboard box (no fire hazards here, no sirree!) and also removed all the condenser lenses from the LEDs which helped a lot with spreading the light out.
 </p>
@@ -40,7 +40,10 @@
 <img width='600px' src='assets/dresser_off_closeup_cropped.jpg'>
 
 <p>
-  Do all prototypes end up looking this glorious? So far, the box seems to be a great &amp; easy solution. At first I had envisioned something more sun-esque, and I'd still like to do something like it, but I'm starting to think that maybe this box could still exist inside of another circular chassis. For now I'm undecided on how to achieve a more sun-esque look - at first I thought I should just plop a scatter lens in front of the LEDs and call it a day, but unfortunately those are impossible to find cheaply.. Maybe I just don't know how to look for them.
+  Do all prototypes end up looking this glorious?
+</p> 
+<p>
+  So far, the box seems to be a great &amp; easy solution. At first I had envisioned something more sun-esque, and I'd still like to do something like that, but I'm starting to think that maybe a box like this could still exist inside of another circular chassis. For now I'm undecided on how to achieve a more sun-esque look - at first I thought I should just plop a scatter lens in front of the LEDs and call it a day (haha), but unfortunately those are impossible to find cheaply.. Maybe I just don't know how to look for them.
 </p>
 
 <img width='600px' src='assets/dresser_breadboard_cropped.jpg'>
