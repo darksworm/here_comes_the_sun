@@ -8,16 +8,15 @@
 </video>
 
 <p>
-  After some further investigation, it became clear that sometimes turning the lights on or off, would make the LCD would start outputing gibberish. I also noticed that turning the lights on severely impacted the brightness and color of the characters on the LCD. Is the relay sucking too much juice?
+  After some further investigation, it became clear that sometimes turning the lights on or off would make the LCD output gibberish. I also noticed that turning the lights on severely impacted the brightness and color of the characters on the LCD. Is the relay sucking too much juice?
 </p>
-
 
 <video vidth='480px' height='270px' controls>
   <source src='assets/lcd_relay_power_draw.mp4' type='video/mp4'>
 </video>
 
 <p>
-  The arduino uno is rated to output at max 200 mA and each of the relays draw 120 mA. I quicky fixed this by using one relay instead of two (leaving one of the AC lines connected). This solved the character brighness issue, but the LCD would still would get garbled at times. 
+  The arduino uno is rated to output 200 mA and each of the relays draw 120 mA. o-oh. I quickly fixed this by using one relay instead of two (leaving one of the AC lines connected). This solved the character brightness issue, but the LCD would still would get garbled at times. 
 </p>
 
 <p>
@@ -28,8 +27,8 @@
     I am not thrilled about having the 12V PSU connected at all times, but I don't see a better alternative at this point. I ordered an I2C module for the LCD in the hopes that having a serial connection between the arduino and LCD would fix these issues as the RTC (which is connected via I2c) seems to be unaffected by the noise from the relay.
 </p>
 
-<a href='lcd_issues.html'>Next part: LCD noise issues</a>
+<!--<a href='lcd_issues.html'>Next part: LCD noise issues</a>
 <br/>
-<br/>
+<br/>-->
 <a href="ui_impl.html">Previous part: Implementing the UI</a>
 
