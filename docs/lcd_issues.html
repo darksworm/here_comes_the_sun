@@ -16,7 +16,7 @@
 </video>
 
 <p>
-  The arduino uno is rated to output 200 mA and each of the relays draw 120 mA. o-oh. I quickly fixed this by using one relay instead of two (leaving one of the AC lines connected). This solved the character brightness issue, but the LCD would still would get garbled at times. 
+  The arduino uno is rated to output 200 mA and each of the relays draw 120 mA. o-oh. I quickly fixed this by using one relay instead of two (leaving one of the AC lines connected). This solved the character brightness issue, but the LCD would still would get garbled at times.
 </p>
 
 <p>
@@ -25,6 +25,18 @@
 
 <p>
     I am not thrilled about having the 12V PSU connected at all times, but I don't see a better alternative at this point. I ordered an I2C module for the LCD in the hopes that having a serial connection between the arduino and LCD would fix these issues as the RTC (which is connected via I2c) seems to be unaffected by the noise from the relay.
+</p>
+
+<p><i>Some time passes...</i></p>
+
+<p>
+  The I2C LCD module arrived!
+</p>
+
+<img src='assets/i2c_lcd_module_cropped.jpg' width='480px'/>
+
+<p>
+  Two data pins instead of six, but the same functionality - <b>AMAZING</b>. I wish I had bought this earlier. I bet that if I had this at the beginning, i would have skipped at least a few hours or head-scratching. The most important part - using I2C for the LCD instead of the 6 data pins <b>solved the relay noise issue</b>!
 </p>
 
 <!--<a href='lcd_issues.html'>Next part: LCD noise issues</a>
